@@ -4,6 +4,7 @@ import { ThemeProvider } from "styled-components/native";
 import { theme } from "./features/infrastructure/theme";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { SafeArea } from "./features/restaurants/components/utility/safe-area.component";
 import { StyleSheet, View, SafeAreaView } from "react-native";
 import {
   useFonts as useOswald,
@@ -15,23 +16,38 @@ import {
   Roboto_500Medium,
 } from "@expo-google-fonts/roboto";
 import { Text } from "./features/restaurants/components/typography/text.component";
+import { Ionicons } from "@expo/vector-icons";
 
 function MapScreen() {
   return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+    <SafeArea>
       <Text>Map</Text>
-    </View>
+    </SafeArea>
   );
 }
 
 function SettingsScreen() {
   return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+    <SafeArea>
       <Text>Settings</Text>
-    </View>
+    </SafeArea>
   );
 }
 const BottomTab = createBottomTabNavigator();
+
+const TABICON = {
+  Home: "md-restaurant",
+  Map: "md-map",
+  Settings: "md-settings",
+};
+const createScreenOptions = ({ route }) => {
+  const iconName = TABICON[route.name];
+  return {
+    tabBarIcon: ({ size, color }) => (
+      <Ionicons name={iconName} size={size} color={color} />
+    ),
+  };
+};
 
 export default function App() {
   const [oswaldLoaded] = useOswald({
@@ -52,10 +68,28 @@ export default function App() {
     <>
       <ThemeProvider theme={theme}>
         <NavigationContainer>
-          <BottomTab.Navigator screenOptions={{ headerShown: false }}>
-            <BottomTab.Screen name="Home" component={RestaurantsScreen} />
-            <BottomTab.Screen name="Map" component={MapScreen} />
-            <BottomTab.Screen name="Settings" component={SettingsScreen} />
+          <BottomTab.Navigator
+            screenOptions={createScreenOptions}
+            tabBarOptions={{
+              activeTintColor: "tomato",
+              inactiveTintColor: "gray",
+            }}
+          >
+            <BottomTab.Screen
+              name="Home"
+              component={RestaurantsScreen}
+              options={{ headerShown: false }}
+            />
+            <BottomTab.Screen
+              name="Map"
+              component={MapScreen}
+              options={{ headerShown: false }}
+            />
+            <BottomTab.Screen
+              name="Settings"
+              component={SettingsScreen}
+              options={{ headerShown: false }}
+            />
           </BottomTab.Navigator>
         </NavigationContainer>
       </ThemeProvider>

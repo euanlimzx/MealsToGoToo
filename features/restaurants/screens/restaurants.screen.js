@@ -9,12 +9,10 @@ import {
 } from "react-native";
 import { Searchbar } from "react-native-paper";
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
-
-const isAndroid = Platform.OS === "android";
-//this is to prevent content from appearing ons staus bar
+import { SafeArea } from "../components/utility/safe-area.component";
 
 export const RestaurantsScreen = () => (
-  <SafeAreaView style={styles.container}>
+  <SafeArea>
     <View style={styles.searchbar}>
       <Searchbar />
     </View>
@@ -41,14 +39,10 @@ export const RestaurantsScreen = () => (
       //we might actually want to avoid in line styling, and we can use attrs & Flatlist instead (styled components)
       //the rule of thumb is to use attrs when you want every instance of a styled component to have that prop, and pass props directly when every instance needs a different one -
     />
-  </SafeAreaView>
+  </SafeArea>
 );
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginTop: isAndroid ? StatusBar.currentHeight : 0,
-  },
   searchbar: {
     padding: 28,
     backgroundColor: "#E0144C",

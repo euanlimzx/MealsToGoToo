@@ -2,7 +2,7 @@ import React from "react";
 import { View, StyleSheet } from "react-native";
 import { Card, Paragraph } from "react-native-paper";
 import styled from "styled-components/native";
-import open from "../../../assets/open";
+import open from "../../assets/open";
 import { SvgXml } from "react-native-svg";
 import { Text } from "../components/typography/text.component";
 
@@ -26,7 +26,7 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
     price = 2,
     isClosedTemporarily = false,
   } = restaurant;
-  //this is known as destructuring an object
+  // //this is known as destructuring an object
 
   const RestaurantCard = styled(Card)`
     background-color: ${(props) => props.theme.colors.bg.primary};

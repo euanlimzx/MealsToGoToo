@@ -9,9 +9,7 @@ export const Search = () => {
   const { keyword, search } = useContext(LocationContext);
   //this is destructuring the keyword as well as the search funcction
   const [searchKeyword, setSearchKeyword] = useState(keyword);
-  useEffect(() => {
-    search(searchKeyword);
-  }, []);
+
   return (
     <View style={styles.searchbar}>
       <Searchbar

@@ -1,0 +1,6 @@
+1. add prices
+2. add website
+3. add ranking / sort feature
+4. add use my location feature
+5. allow users to read reviews? ( slide up function )
+6. add a "where to eat" function

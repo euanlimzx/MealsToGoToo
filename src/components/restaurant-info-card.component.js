@@ -1,6 +1,6 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
-import { Card, Paragraph } from "react-native-paper";
+import { Card } from "react-native-paper";
 import styled from "styled-components/native";
 import open from "../../assets/open";
 import { SvgXml } from "react-native-svg";
@@ -19,7 +19,7 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
     photos = [
       "https://www.foodiesfeed.com/wp-content/uploads/2019/06/top-view-for-box-of-2-burgers-home-made-600x899.jpg",
     ],
-    address = "100 Placeholder St",
+    vicinity = "100 Placeholder St",
     isOpenNow = true,
     rating = 4,
     ratingcount = 112,
@@ -76,7 +76,7 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
               {isOpenNow && <SvgXml xml={open} width={30} height={30} />}
             </Right>
           </Row>
-          <Address>{address}</Address>
+          <Address>{vicinity}</Address>
         </Info>
         <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
       </RestaurantCard>

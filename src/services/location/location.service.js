@@ -19,5 +19,5 @@ export const locationTransform = (result) => {
   const { lat, lng } = geometry.location;
   //this is nested destructuring
 
-  return { lat, lng };
+  return { lat, lng, viewport: geometry.viewport };
 };

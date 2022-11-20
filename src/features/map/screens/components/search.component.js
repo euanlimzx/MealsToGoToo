@@ -3,7 +3,7 @@ import { StyleSheet, View } from "react-native";
 
 import React, { useContext, useState, useEffect } from "react";
 
-import { LocationContext } from "../../src/services/location/location.context";
+import { LocationContext } from "../../../../services/location/location.context";
 
 export const Search = () => {
   const { keyword, search } = useContext(LocationContext);
@@ -12,6 +12,7 @@ export const Search = () => {
   useEffect(() => {
     setSearchKeyword(keyword);
   }, [keyword]);
+
   return (
     <View style={styles.searchbar}>
       <Searchbar
@@ -22,7 +23,6 @@ export const Search = () => {
         }}
         onChangeText={(text) => {
           setSearchKeyword(text);
-          console.log(searchKeyword);
         }}
       />
     </View>

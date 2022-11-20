@@ -6,15 +6,8 @@ import { SafeArea } from "../../components/utility/safe-area.component";
 import { NavigationContainer } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
 
-import { RestaurantsScreen } from "../../features/restaurants/screens/restaurants.screen";
-
-function MapScreen() {
-  return (
-    <SafeArea>
-      <Text>Map</Text>
-    </SafeArea>
-  );
-}
+import { RestaurantsNavigator } from "./restaurants.navigator";
+import { MapScreen } from "../../features/map/screens/map.screen";
 
 function SettingsScreen() {
   return (
@@ -50,7 +43,7 @@ export const AppNavigator = () => (
     >
       <BottomTab.Screen
         name="Home"
-        component={RestaurantsScreen}
+        component={RestaurantsNavigator}
         options={{ headerShown: false }}
       />
       <BottomTab.Screen

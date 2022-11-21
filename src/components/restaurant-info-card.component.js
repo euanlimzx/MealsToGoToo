@@ -5,6 +5,7 @@ import styled from "styled-components/native";
 import open from "../../assets/open";
 import { SvgXml } from "react-native-svg";
 import { Text } from "../components/typography/text.component";
+import { Favourite } from "./favourites/favourite.component";
 
 //just take note that if you use styled components there will be an ios error when u do the status bar thing
 //(if this part is true) && (this part will execute)
@@ -20,11 +21,11 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
       "https://www.foodiesfeed.com/wp-content/uploads/2019/06/top-view-for-box-of-2-burgers-home-made-600x899.jpg",
     ],
     vicinity = "100 Placeholder St",
-    isOpenNow = true,
+    isOpenNow = false,
     rating = 4,
     ratingcount = 112,
     price = 2,
-    isClosedTemporarily = false,
+    isClosedTemporarily = true,
   } = restaurant;
   // //this is known as destructuring an object
 
@@ -62,6 +63,7 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
     <View style={styles.list}>
       <RestaurantCard elevation={5}>
         <Info>
+          <Favourite restaurant={restaurant} />
           <Text variant="label">{name}</Text>
           <Row>
             <Text>{rating} </Text>

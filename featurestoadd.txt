@@ -8,10 +8,11 @@
 8. for the main app function, what if i just remove the safe area view and add more padding, i thinkit looks better that way ( or maybe add padding only for the android version)
 9. check if the isOpenNow and the isTemporarily closed has conflict when we use the actual google API
 10. should have a open in google maps function 
+11. for restaurant card component, should have a swipe down function 
 
 Error:
     1. VirtualizedList: You have a large list that is slow to update - make sure your renderItem function renders components that follow React performance best practices like PureComponent, shouldComponentUpdate, etc. {"contentLength": 6316.36376953125, "dt": 656, "prevDt": 13396}
 
-Note:
+Note:   
 1. safe area component is basically useless cos i nvr use it
 2. favourite bar as well

@@ -32,6 +32,7 @@ export const Search = () => {
 const styles = StyleSheet.create({
   searchbar: {
     padding: 28,
+    paddingTop: 40,
     backgroundColor: "#E0144C",
   },
 });

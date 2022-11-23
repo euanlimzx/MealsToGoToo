@@ -15,8 +15,6 @@ export const Search = ({ isFavouritesToggled, onFavouritesToggle }) => {
   return (
     <View style={styles.searchbar}>
       <Searchbar
-        icon={isFavouritesToggled ? "heart" : "heart-outline"}
-        onIconPress={onFavouritesToggle}
         placeholder="Search for a location"
         value={searchKeyword}
         onSubmitEditing={() => {
@@ -34,6 +32,7 @@ export const Search = ({ isFavouritesToggled, onFavouritesToggle }) => {
 const styles = StyleSheet.create({
   searchbar: {
     padding: 28,
+    paddingTop: 40,
     backgroundColor: "#E0144C",
   },
 });

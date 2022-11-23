@@ -8,14 +8,8 @@ import { Ionicons } from "@expo/vector-icons";
 
 import { RestaurantsNavigator } from "./restaurants.navigator";
 import { MapScreen } from "../../features/map/screens/map.screen";
+import { FavouriteScreen } from "../../features/favourites/favouritescreen";
 
-function SettingsScreen() {
-  return (
-    <SafeArea>
-      <Text>Settings</Text>
-    </SafeArea>
-  );
-}
 const BottomTab = createBottomTabNavigator();
 
 export const AppNavigator = () => (
@@ -28,8 +22,8 @@ export const AppNavigator = () => (
 
           if (route.name === "Home") {
             iconName = "md-restaurant";
-          } else if (route.name === "Settings") {
-            iconName = "md-settings";
+          } else if (route.name === "Favourites") {
+            iconName = "md-heart";
           } else if (route.name === "Map") {
             iconName = "md-map";
           }
@@ -52,8 +46,8 @@ export const AppNavigator = () => (
         options={{ headerShown: false }}
       />
       <BottomTab.Screen
-        name="Settings"
-        component={SettingsScreen}
+        name="Favourites"
+        component={FavouriteScreen}
         options={{ headerShown: false }}
       />
     </BottomTab.Navigator>

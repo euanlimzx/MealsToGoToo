@@ -23,4 +23,15 @@ npm WARN deprecated request@2.88.2: request has been deprecated, see https://git
 Note:   
 1. safe area component is basically useless cos i nvr use it
 2. favourite bar as well
-3. at the end of 223, i realised i do not have an "engine" section in my package.json file
+3. issue faced at the end of lecture 227, for some reason this fucking worked *
+
+
+*In meals-to-go terminal run: npx ngrok http http://localhost:5001
+
+Go through the steps and copy the Forwarding information which looks like this http://31d8-41-184-201-155.ngrok.io
+
+Replace the http://localhost:5001 with http://31d8-41-184-201-155.ngrok.io
+
+so in location.service.js the fetch url will be something like this:
+
+`http://31d8-41-184-201-155.ngrok.io/mealstogo-14b61/us-central1/geocode?city=${searchTerm}`

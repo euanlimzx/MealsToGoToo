@@ -1,3 +1,4 @@
+//this is under testng
 //FOR JAVASCRIPT
 //note to self: parenthesis are used as shothand to return an object : ({name:amanda}) is equivalent to { return {name:amanda}}
 //parenthesis can also be used to group multitline return statements

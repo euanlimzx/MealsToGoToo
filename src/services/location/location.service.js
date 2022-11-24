@@ -2,7 +2,7 @@ import camelize from "camelize";
 
 export const locationRequest = (searchTerm) => {
   return fetch(
-    `http://f324-116-14-84-184.ngrok.io/nommy-50094/us-central1/geocode?city=${searchTerm}`
+    `http://9e7d-116-14-84-184.ngrok.io/nommy-50094/us-central1/geocode?city=${searchTerm}`
   ).then((res) => {
     return res.json();
   });

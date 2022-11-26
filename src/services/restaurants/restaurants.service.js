@@ -1,9 +1,10 @@
 import camelize from "camelize";
 export const restaurantsRequest = (location) => {
   return fetch(
-    `http://9e7d-116-14-84-184.ngrok.io/nommy-50094/us-central1/placesNearby?location=${location}`
+    `https://us-central1-nommy-50094.cloudfunctions.net/placesNearby?location=${location}`
     //remember to change this from ngrok to firebase when needed
   ).then((res) => {
+    console.log("hello");
     return res.json();
   });
 };

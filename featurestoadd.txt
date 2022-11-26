@@ -9,6 +9,8 @@
 9. check if the isOpenNow and the isTemporarily closed has conflict when we use the actual google API
 10. should have a open in google maps function 
 11. for restaurant card component, should have a swipe down function 
+12. multiple result types?
+13. price feature
 
 Error:
     1. VirtualizedList: You have a large list that is slow to update - make sure your renderItem function renders components that follow React performance best practices like PureComponent, shouldComponentUpdate, etc. {"contentLength": 6316.36376953125, "dt": 656, "prevDt": 13396}

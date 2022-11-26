@@ -25,10 +25,10 @@ export const RestaurantsContextProvider = ({ children }) => {
   const retrieveRestaurants = (loc) => {
     setIsLoading(true);
     setRestaurants([]);
-
     restaurantsRequest(loc)
       .then(restaurantsTransform)
       .then((results) => {
+        console.log(results);
         setIsLoading(false);
         setRestaurants(results);
       })

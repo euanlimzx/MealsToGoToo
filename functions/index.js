@@ -1,6 +1,6 @@
 const functions = require("firebase-functions");
 const { googleGeocodeRequest } = require("./geocode");
-const { placesRequest } = require("./places");
+const { googlePlacesRequest } = require("./places");
 
 const { Client } = require("@googlemaps/google-maps-services-js");
 
@@ -11,5 +11,5 @@ exports.geocode = functions.https.onRequest((request, response) => {
 });
 
 exports.placesNearby = functions.https.onRequest((request, response) => {
-  placesRequest(request, response, client);
+  googlePlacesRequest(request, response, client);
 });
